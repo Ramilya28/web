@@ -1,0 +1,16 @@
+  python -m venv venv 
+  .\venv\Scripts\activate
+  pip install django
+  django-admin startproject mysite 
+
+  python manage.py runserver
+  py.exe .\manage.py migrate
+  py.exe .\manage.py createsuperuser
+  py.exe .\manage.py startapp blog
+  py.exe .\manage.py makemigrations 
+  git init
+git  status
+git add .
+git commit -m "Comment"
+
+git push -u origin main

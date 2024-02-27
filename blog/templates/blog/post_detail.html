@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+                <article class="post">
+                    <aside class="actions">
+                        <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
+                        </a>
+                    </aside>
+                    {% if post.published_date %}
+                        <time class="date">
+                            {{ post.published_date }}
+                        </time>
+                        {% endif %}
+                        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                        <h3 class="all-posts-link"><a href="{% url 'post_list' %}">Все записи</a></h3>
+                        
+
+                    </article>
+{% endblock %}
