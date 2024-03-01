@@ -1,4 +1,87 @@
 h1 a, h2 a {
-    color: #d01573;
+    color: #de2280d0;
     font-family: 'Lobster';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Header Styles */
+.bg-image-full {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px 0;
+    color: #fff;
+}
+
+/* Blog Styles */
+.post {
+    margin-bottom: 20px;
+}
+
+.post h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.post p {
+    line-height: 1.6;
+}
+
+.post .date {
+    font-style: italic;
+    color: #888;
+}
+
+.post .actions {
+    text-align: right;
+}
+
+.all-posts-link,
+.new-posts-link {
+    margin-top: 20px;
+}
+
+/* Form Styles */
+.post-form {
+    margin-top: 20px;
+}
+
+.post-form button {
+    margin-top: 10px;
+}
+
+.save {
+    margin-right: 10px;
 }

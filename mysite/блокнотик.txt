@@ -2,7 +2,6 @@
   .\venv\Scripts\activate
   pip install django
   django-admin startproject mysite 
-
   python manage.py runserver
   py.exe .\manage.py migrate
   py.exe .\manage.py createsuperuser
@@ -12,5 +11,4 @@
 git  status
 git add .
 git commit -m "Comment"
-
 git push -u origin main
