@@ -1,6 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
                 <article class="post">
                     <aside class="actions">
                         <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
@@ -15,4 +17,7 @@
                         <p>{{ post.text|linebreaksbr }}</p>
                         <h3 class="all-posts-link"><a href="{% url 'post_list' %}">Все записи</a></h3>
                     </article>
+                </div>
+            </div>
+        </div>
 {% endblock %}

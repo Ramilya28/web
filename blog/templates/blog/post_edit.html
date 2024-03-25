@@ -1,6 +1,9 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
     <h2>New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
@@ -9,4 +12,7 @@
             <a class="btn btn-danger" href="{% url 'post_delete' pk=post.pk %}" role="button">Delete</a>
         {% endif %}
     </form>
+    </div>
+</div>
+</div>
 {% endblock %}

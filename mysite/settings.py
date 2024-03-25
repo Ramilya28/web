@@ -130,9 +130,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-if DEBUG:
+# if DEBUG:
     # Обработчик статических файлов для встроенного сервера Django в режиме разработки.
-    STATICFILES_FINDERS = [
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
+#     STATICFILES_FINDERS = [
+#         'django.contrib.staticfiles.finders.FileSystemFinder',
+#         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# ]

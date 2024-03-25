@@ -1,5 +1,8 @@
 {% extends 'blog/base.html' %}
     {% block content %}
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
     <h3 class="new-posts-link"><a href="{% url 'post_new' %}">Формы</a></h3>
                 {% for post in posts %}
                     <article class="post">
@@ -9,5 +12,8 @@
                         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                         <p>{{ post.text|linebreaksbr }}</p>
                     </article>
-                {% endfor %}              
+                {% endfor %}   
+                       </div>  
+                    </div>    
+                </div>      
     {% endblock %}

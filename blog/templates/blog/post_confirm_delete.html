@@ -1,9 +1,15 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+      <div class="col-lg-6">
   <h2>Confirm deletion</h2>
   <p>Are you sure you want to delete "{{ object }}"?</p>
   <form method="post">
     {% csrf_token %}
     <button type="submit">Confirm</button>
   </form>
+  </div>
+</div>
+</div>
 {% endblock %}
