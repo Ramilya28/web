@@ -9,6 +9,8 @@ from django.views.generic import UpdateView
 from django.views.generic import DeleteView
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 
 
@@ -37,10 +39,13 @@ class PostCreateView(CreateView):
     template_name = 'blog/post_edit.html'
     success_url = '/'
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    success_url = reverse_lazy('post_list') 
-    #template_name = 'blog/post_confirm_delete.html'
+    success_url = reverse_lazy('post_list')
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
 
 class PostDetailView(DetailView):
     model = Post
@@ -88,3 +93,28 @@ class PostEditView(UpdateView):
 #     else:
 #         form = PostForm(instance=post)
 #     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    success_url = '/'  # Перенаправление после удаления
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
